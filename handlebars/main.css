@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    padding: 20px;
+}
+
+.app {
+    width: 800px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message-input,
+.message-input-risp {
+    width: 400px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    height: 50px;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.mess-btn,
+.btn-risp {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+.mess-btn {
+    background-color: lightgreen;
+}
+
+.btn-risp {
+    background-color: lightsalmon;
+}
+
+.message.sent {
+    margin-bottom: 10px;
+    width: 500px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-left: 5px;
+    background-color: lightgreen;
+}
+
+.message.received {
+    margin-bottom: 10px;
+    width: 500px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding-right: 5px;
+    text-align: right;
+    background-color: lightsalmon;
+}
+
+.message.received .message-time {
+    font-size: 10px;
+    text-align: left;
+}
+
+.message .message-time {
+    font-size: 10px;
+    text-align: right;
+}
