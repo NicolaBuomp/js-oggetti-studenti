@@ -15,56 +15,40 @@ $(document).ready(function () {
     var messaggi = [{
             text: 'Ciao',
             orario: '10:20',
+            userClass: 'received'
         },
         {
             text: 'Ciaoooooooo',
             orario: '10:25',
+            userClass: 'sent'
         },
         {
             text: 'Che mi racconti ?',
             orario: '10:30',
+            userClass: 'received'
         },
         {
             text: 'Nulla sono in quarantena...',
             orario: '10:35',
+            userClass: 'sent'
         },
     ];
 
 
-    var data1 = {
-        text: messaggi[0].text,
-        time: messaggi[0].orario,
-        userClass: 'sent'
-    }
+    for (var i = 0; i < messaggi.length; i++) {
 
-    var data2 = {
-        text: messaggi[1].text,
-        time: messaggi[1].orario,
-        userClass: 'received'
-    }
+        var actual = messaggi[i];
 
-    var data3 = {
-        text: messaggi[2].text,
-        time: messaggi[2].orario,
-        userClass: 'sent'
-    }
+        var messaggiPrec = {
+            text: actual.text,
+            time: actual.orario,
+            userClass: actual.userClass
+        }
 
-    var data4 = {
-        text: messaggi[3].text,
-        time: messaggi[3].orario,
-        userClass: 'received'
-    }
+        var set = template(messaggiPrec);
+        chat.append(set);
 
-    var output1 = template(data1);
-    var output2 = template(data2);
-    var output3 = template(data3);
-    var output4 = template(data4);
-
-    chat.append(output1);
-    chat.append(output2);
-    chat.append(output3);
-    chat.append(output4);
-
+    };
 
 
     btn.click(function () {
