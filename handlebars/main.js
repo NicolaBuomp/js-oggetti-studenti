@@ -12,12 +12,63 @@ $(document).ready(function () {
     var template = Handlebars.compile(source);
 
 
+    var messaggi = [{
+            text: 'Ciao',
+            orario: '10:20',
+        },
+        {
+            text: 'Ciaoooooooo',
+            orario: '10:25',
+        },
+        {
+            text: 'Che mi racconti ?',
+            orario: '10:30',
+        },
+        {
+            text: 'Nulla sono in quarantena...',
+            orario: '10:35',
+        },
+    ];
+
+
+    var data1 = {
+        text: messaggi[0].text,
+        time: messaggi[0].orario,
+        userClass: 'sent'
+    }
+
+    var data2 = {
+        text: messaggi[1].text,
+        time: messaggi[1].orario,
+        userClass: 'received'
+    }
+
+    var data3 = {
+        text: messaggi[2].text,
+        time: messaggi[2].orario,
+        userClass: 'sent'
+    }
+
+    var data4 = {
+        text: messaggi[3].text,
+        time: messaggi[3].orario,
+        userClass: 'received'
+    }
+
+    var output1 = template(data1);
+    var output2 = template(data2);
+    var output3 = template(data3);
+    var output4 = template(data4);
+
+    chat.append(output1);
+    chat.append(output2);
+    chat.append(output3);
+    chat.append(output4);
+
+
+
     btn.click(function () {
-
-        console.log('OK');
         var textMessage = input.val().trim();
-
-        console.log(textMessage);
 
         var data = {
             text: textMessage,
@@ -35,11 +86,7 @@ $(document).ready(function () {
 
     btnRisp.click(function () {
 
-        console.log('Anche io OK');
-
         var textMessageRisp = inputRisp.val().trim();
-
-        console.log(textMessageRisp);
 
         var data = {
             text: textMessageRisp,
